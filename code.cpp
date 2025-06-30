@@ -27,5 +27,6 @@ int main() {
    cout << INT16_MAX<< " " << INT32_MAX << " " << INT64_MAX << endl;
    cout << INT16_MIN << " " << INT32_MIN << " " << INT64_MIN << endl;
    cout << UINT16_MAX << " " << UINT32_MAX << " " << UINT64_MAX << endl;
+   
    return 0;
 }

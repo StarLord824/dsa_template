@@ -1,0 +1,307 @@
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}%\setmainfont{Times New Roman}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+
+\definecolor{cvblue}{HTML}{0E5484}
+\definecolor{black}{HTML}{130810}
+\definecolor{darkcolor}{HTML}{0F4539}
+\definecolor{cvgreen}{HTML}{3BD80D}
+\definecolor{taggreen}{HTML}{00E278}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{name}{black}
+\colorlet{tagline}{darkcolor}
+\colorlet{heading}{darkcolor}
+\colorlet{headingrule}{cvblue}
+\colorlet{accent}{darkcolor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% \usepackage[T1]{fontenc}
+% \usepackage[T1]{fontenc}
+% \usepackage{cochineal}
+% \usepackage{fourier}
+
+% \usepackage{fontspec}
+% \usepackage{polyglossia}
+% \setmainlanguage{german}
+% \setmainfont{Times New Roman}
+
+% serif
+\usepackage{CormorantGaramond}
+\usepackage{charter}
+
+% \pagestyle{fancy}
+% \fancyhf{}  % clear all header and footer fields
+% \fancyfoot{}
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+\urlstyle{same}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large#1} & \textbf{\small #2} \\
+      \textit{\large#3} & \textit{\small #4} \\
+      
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSingleSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large#1} & \textbf{\small #2} \\
+      
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.1in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+%-------------------------------------------\usepackage{fontspec}
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+%----------HEADING----------
+
+
+\begin{center}
+    {\huge Abhinav Shukla} \\ \vspace{2pt} 
+    {+918922993445} ~ 
+    \small{}
+    \href{mailto:shuklaabhinav824@gmail.com}{\color{blue}{shuklaabhinav824@gmail.com}} ~ 
+    \small{}
+    \href{https://linkedin.com/in/abhinav-shukla-877097267}{ \color{blue}{LinkedIn}}  ~
+    \small{}
+    \href{https://starlord-dev.vercel.app/}{ \color{blue}{Portfolio}}  ~
+    \small{}
+    \href{https://github.com/StarLord824}{ \color{blue}{GitHub}} ~
+    \vspace{-4pt}
+\end{center}
+
+% \vspace{-10pt}
+
+%-----------EDUCATION-----------
+\section{\color{airforceblue}EDUCATION}
+  \resumeSubHeadingListStart
+    \vspace{2pt}
+  
+    \resumeSubheading
+      {Galgotias College of Engineering \& Technology}{Greater Noida, Uttar Pradesh, India}
+      {B.Tech in CSE-AIML (CGPA - 7.6)}{November 2022 - May 2026}
+    \vspace{-4pt}
+  \resumeSubHeadingListEnd
+  \vspace{-12pt}
+ 
+ %-----------EXPERIENCE-----------
+\section{\color{airforceblue}WORK EXPERIENCE}
+\vspace{2pt}
+  \resumeSubHeadingListStart
+
+    \resumeSingleSubheading
+      {Frontend Developer Intern \normalfont\textit{\large $|$ Medulla AI, Hybrid}}{{\normalfont\small\textit{November 2025 - March 2026}}}
+      {}{}
+      \vspace{-5pt}
+        \resumeItemListStart
+            \resumeItem{\normalsize{Engineered a 60fps video canvas and Canva-style AOI drawing engine for an async ML pipeline. Bypassed React renders via requestAnimationFrame for seamless synchronization, implementing complex coordinate normalization and dual-store Zustand synchronization.}}
+            \vspace{-1pt}
+            \resumeItem{\normalsize{Built the platform-wide architecture, managing state across 8+ Zustand stores and TanStack Query. Engineered a type-safe API layer and integrated high-performance ML visualizations using Motion and rAF-driven Recharts.}}
+      \resumeItemListEnd
+      \vspace{-6pt}
+      \resumeSingleSubheading
+      {Full Stack Developer Intern \normalfont\textit{\large $|$ Serplock, Remote}}{{\normalfont\small\textit{March 2025 - Present}}}
+      {}{}
+      \vspace{-5pt}
+        \resumeItemListStart
+            \resumeItem{\normalsize{Architected a serverless LLM data pipeline (Deno, Supabase, OpenAI) to compute visibility metrics across 258 categories, engineering a multi-phase brand resolution engine utilizing vector embeddings, pg\_trgm fuzzy search, and optimized PL/pgSQL queries that eliminated production timeouts.}}
+            \vspace{-1pt}
+            \resumeItem{\normalsize{Architected an serverless AI brand intelligence platform, orchestrating a multi-model pipeline with automated web rendering for 2-pass knowledge graph extraction and blueprint-driven SEO topic generation, while engineering heuristic source attribution and a brand resolution engine.}} 
+      \resumeItemListEnd 
+    \resumeSubHeadingListEnd
+\vspace{-15pt}
+
+%-----------PROJECTS-----------
+\section{\color{airforceblue}PROJECTS}    
+\vspace{2pt}
+ \resumeSubHeadingListStart
+  
+    \resumeSubheading
+    {Devboard}
+      {\href{https://github.com/StarLord824/devboard}{\color{blue}{Code \& Demo}}}
+      {}{}
+      \vspace{-19pt}
+        \resumeItemListStart
+            \resumeItem{\normalsize{Engineered a collaborative custom HTML5 Canvas engine (zero external libraries) with a 4-layer architecture, maintaining 60fps performance through viewport frustum culling and Ramer-Douglas-Peucker path simplification to reduce CRDT network payloads by 70\%.}}
+            \vspace{-1pt}
+            \resumeItem{\normalsize{Architected a horizontally scalable microservice backend utilizing Conflict-free Replicated Data Types (CRDTs) over persistent bidirectional connections and a pub/sub event layer to eliminate affinity constraints, optimizing data persistence with serialized binary state for O(1) loads, and containerized the architecture via a 4-stage, dependency-caching build pipeline to deploy minimal runtime images.}}
+            
+      \resumeItemListEnd  
+    \vspace{-1.5pt}
+    \resumeSubheading
+      {Finmate}
+      {\href{https://github.com/StarLord824/finmate.dev}{\color{blue}{Code \& Demo}} }
+      {}{}
+      \vspace{-19pt}
+        \resumeItemListStart
+            \resumeItem{\normalsize{Architected a polyglot microservices platform across 10 services within a monorepo, engineering dual-schema PostgreSQL isolation (Prisma/Alembic) to process 200+ daily financial articles and serve low-latency mutual fund data via a custom Go API.}}
+            \vspace{-1pt}
+            \resumeItem{\normalsize{Engineered a resilient AI enrichment and semantic search pipeline featuring Redis-backed token quota tracking for automated 4-provider LLM failover, integrating pgvector HNSW indexing for sub-100ms cosine-similarity queries, and deploying the entire system across edge and serverless infrastructure at zero operational cost.}}
+            
+      \resumeItemListEnd 
+    \vspace{-1.5pt}
+
+    \resumeSubheading
+      {Interactive Rust/WASM Application}
+      {\href{https://github.com/StarLord824/santa-delivery}{\color{blue}{Code \& Demo}}}
+      {}{}
+      \vspace{-19pt}
+        \resumeItemListStart
+            \resumeItem{\normalsize{Engineered a high-performance, memory-safe 2D engine using Rust and WebAssembly, architecting a modular game loop with AABB collision detection that achieves consistent 60 FPS without garbage collection latency.}}
+            % \vspace{-1pt}
+            % \resumeItem{\normalsize{Implemented complex backend systems for state persistence (I/O), particle physics, and dynamic object pooling, leveraging Rust’s ownership model and zero-cost abstractions to ensure system stability and efficiency.}}
+            
+      \resumeItemListEnd 
+    \vspace{3pt}
+    
+ \resumeSubHeadingListEnd
+
+\vspace{-16pt}
+
+%-----------PROGRAMMING SKILLS-----------
+\section{\color{airforceblue}TECHNICAL SKILLS}
+ \begin{itemize}[leftmargin=0in, label={}]
+    \vspace{2pt}
+    \small{\item{
+     \textbf{\normalsize{Programming Languages:}}{ \normalsize{TypeScript, Python, Rust, Go, JavaScript, Java, C++}} \\
+      \vspace{3pt}
+      
+     \textbf{\normalsize{Frontend:}}{ \normalsize{Next.js, React.js, Tailwind CSS, Zustand, TanStack Query, Framer Motion}} \\
+      \vspace{3pt}
+
+    \textbf{\normalsize{Backend:}}{ \normalsize{Node.js, Express.js, FastAPI, Go Fiber, Deno, WebSockets}} \\
+      \vspace{3pt}
+
+    \textbf{\normalsize{Databases \& ORMs:}}{ \normalsize{PostgreSQL, Redis, MongoDB, Supabase, Prisma}} \\
+        \vspace{3pt}
+        
+    \textbf{\normalsize{Tools \& Technologies:}}{ \normalsize{Git, Github, Linux, Docker, AWS
+}} \\
+     % \vspace{3pt}
+    % \textbf{\normalsize{Courseworks:}}
+    % {\normalsize{Data Structures and Algorithms, DBMS, Operating Systems, Computer Networking, OOPS, Machine Learning, System Design}} \\
+
+     % copy and paste above textbf block to add more 
+     }}
+ \end{itemize}
+ \vspace{-16pt}
+
+%-----------Publications---------------
+\section{\color{airforceblue}ACTIVITIES}
+    \vspace{2pt}
+  \resumeItemListStart
+    \resumeItem{\textbf{\normalsize{Hackathons :}}{\normalsize{ Top finisher in 6x Hackathons.}}}
+    \vspace{-5pt}
+    \resumeItem{\textbf{\normalsize{Meta Hacker Cup 2025 :}}{\normalsize{ Advanced to Round 2, ranking 3,252 globally in Round 1.
+    \href{https://www.linkedin.com/posts/shuklaabhinav824_metahackercup-competitiveprogramming-softwareengineering-activity-7386800360671240192-Ns40}
+    {\color{blue}\underline{Certificate}}
+    }}}
+    \vspace{-5pt}
+    \resumeItem{\textbf{\normalsize{Competitive Programming :}}\normalsize{ 1300+ rating on Codeforces. \href{https://codeforces.com/profile/StarLord024}{\color{blue}\underline{Profile}}}}
+    \vspace{-5pt}
+    \resumeItem{\textbf{\normalsize{Data Structures and Algorithms :}}{\normalsize{ Solved 600+ problems on LeetCode; achieved a contest rating of 1800. \href{https://leetcode.com/u/shuklaabhinav824/}{\color{blue}\underline{Profile}} }}}
+    \vspace{-5pt}
+    
+    % copy and paste above resumeItem block to add more 
+    
+  \resumeItemListEnd 
+      
+\vspace{1pt}
+
+\end{document}

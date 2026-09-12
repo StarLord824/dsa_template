@@ -19,7 +19,7 @@
    #define MAX 100005
    #define MIN -100005
 
-   int solve(int arr[], int n) {
+   int solve(int tc) {
       
       return 0;
    }
@@ -33,13 +33,8 @@
 
       int t;
       cin>>t;
-      while(t--){
-         int n;
-         cin>>n;
-         int arr[n];
-         for(int i = 0; i < n; i++)
-            cin>>arr[i];
-         solve(arr, n);
+      for(int tc = 0; tc < t; tc++){
+         solve(tc);
       }   
       return 0;
    }

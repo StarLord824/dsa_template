@@ -12,15 +12,6 @@ using namespace std;
 #define MOD 1000000007
 #define endl '\n'
 #define pb push_back
-#define ppb pop_back
-#define all(x) x.begin(), x.end()
-#define inf 9223372036854775807
-#define mod 1000000007
-#define line cout << '\n';
-
-typedef vector<int> vi;
-// typedef long long ll;
-// typedef unsigned long long ull;
 
 inline int power(int x, int y)
 {
@@ -63,7 +54,12 @@ inline int32_t printVector(vector<int> &v)
 
 signed solve(int test)
 {
-    // start coding here
+    int n;
+    int d;
+    cin >> n >> d;
+
+    
+    // cout << "Case #" << test << ": " << (long long)ans << "\n";
     return 0;
 }
 
@@ -73,6 +69,7 @@ int32_t main()
     cin.tie(0);
 
     #ifndef ONLINE_JUDGE
+        // freopen("input.txt", "r", stdin);
         freopen("input.txt", "r", stdin);
         freopen("output.txt", "w", stdout);
         freopen("error.txt", "w", stderr);
@@ -84,7 +81,7 @@ int32_t main()
     cin >> t;
     for (int tc = 1; tc <= t; ++tc)
     {
-        solve(tc);
+        solve(tc);;
     }
 
     cerr << "Time taken: " << (double)(clock() - start) / CLOCKS_PER_SEC << " seconds" << endl;

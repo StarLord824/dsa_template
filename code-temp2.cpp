@@ -11,20 +11,41 @@ signed solve(int test)
     if (!(cin >> n))
         return 0;
 
-    map<int, int> freq_map;
+    vector<pair<int, int>> a(n);
     int max_x = 0;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i].first >> a[i].second;
+        max_x = max(max_x, a[i].first);
+    }
+
+    int M = n + 80;
+    vector<int> freq(M + 1, 0);
+    int sum_large = 0;
 
     for (int i = 0; i < n; i++)
     {
-        int x, y;
-        cin >> x >> y;
-        freq_map[x] += y;
-        max_x = max(max_x, x);
+        int x = a[i].first;
+        int y = a[i].second;
+        if (x <= M)
+        {
+            freq[x] += y;
+        }
+        else
+        {
+            sum_large += y;
+        }
+    }
+
+    vector<int> suff(M + 2, 0);
+    suff[M] = freq[M] + sum_large;
+    for (int i = M - 1; i >= 0; i--)
+    {
+        suff[i] = suff[i + 1] + freq[i];
     }
 
     const int INF_LIMIT = 2e15;
 
-    // O(V * log n + n) check per candidate value V
     auto can_create = [&](int V) -> bool
     {
         if (V == 0)
@@ -36,9 +57,7 @@ signed solve(int test)
         for (int k = V - 1; k >= 1; k--)
         {
             int needed = 1 + S;
-            auto it = freq_map.find(k);
-            int avail = (it != freq_map.end()) ? it->second : 0;
-
+            int avail = freq[k];
             if (avail >= needed)
             {
                 surplus += (avail - needed);
@@ -52,36 +71,24 @@ signed solve(int test)
             }
         }
 
-        int sum_ge_V = 0;
-        for (auto &p : freq_map)
-        {
-            if (p.first >= V)
-            {
-                sum_ge_V += p.second;
-            }
-        }
-
-        auto it0 = freq_map.find(0);
-        int orig_0 = (it0 != freq_map.end()) ? it0->second : 0;
         int needed_0 = 1 + S;
-        int total_zeros = orig_0 + surplus + sum_ge_V;
+        int total_zeros = freq[0] + surplus + suff[V];
         return total_zeros >= needed_0;
     };
 
-    // Linear Search instead of Binary Search:
-    // Checks every candidate V one-by-one from 0 up to n + 80.
-    // Total complexity per test case: O(N^2 * log N), causing TLE on N = 2e5.
+    int low = 0, high = M;
     int best_V = 0;
-    int upper_limit = n + 80;
-    for (int V = 0; V <= upper_limit; V++)
+    while (low <= high)
     {
-        if (can_create(V))
+        int mid = low + (high - low) / 2;
+        if (can_create(mid))
         {
-            best_V = V;
+            best_V = mid;
+            low = mid + 1;
         }
         else
         {
-            break;
+            high = mid - 1;
         }
     }
 
@@ -112,3 +119,4 @@ int32_t main()
 
     return 0;
 }
+1
